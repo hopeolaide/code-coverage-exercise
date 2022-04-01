@@ -40,5 +40,19 @@ def test_get_student_with_more_classes():
         "sophomore",
         ["mathematics", "foundations of computing"]
     )
-
+    #ACT
+    # result = get_student_with_more_classes(charles, ada)    
     # TODO: write assertions
+    assert get_student_with_more_classes(charles, ada) == ada   
+    assert get_student_with_more_classes(ada, charles) == ada
+
+def test_courses_is_empty_list():
+    name = "Ada Lovelace"
+    level = "sophomore"
+    # courses = None
+
+    ada = Student(name, level)
+
+    assert ada.name == name
+    assert ada.level == level
+    assert ada.courses == []
